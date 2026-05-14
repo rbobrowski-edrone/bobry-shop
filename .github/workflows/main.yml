@@ -17,6 +17,8 @@ jobs:
         username: deploy@bobry-shop.pl
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: ./
+        protocol: ftps
+        port: 21
         exclude: |
           **/.git*
           **/.git*/**
