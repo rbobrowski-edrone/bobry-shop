@@ -1,0 +1,19 @@
+on:
+  push:
+    branches: [main]
+name: 🚀 Deploy via SSH
+jobs:
+  deploy:
+    name: 🎉 git pull on cyberfolks
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔄 Pull on server
+        uses: appleboy/ssh-action@v1
+        with:
+          host: s183.cyber-folks.pl
+          port: 222
+          username: dpkvcjsczx
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~/domains/bobry-shop.pl/public_html
+            git pull origin main
