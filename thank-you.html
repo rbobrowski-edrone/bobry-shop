@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dziekujemy — Atramento</title>
+    <title>Dziękujemy — Bobrownia</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
     <div class="header-top">
-        <div class="logo"><a href="index.html"><span>Atramento</span></a></div>
+        <div class="logo"><a href="index.html"><img class="logo-icon" src="images/logo.jpeg" alt="Bobrownia — pieczęć"><span>Bobrownia</span></a></div>
         <nav>
-            <a href="index.html">Strona Glowna</a>
+            <a href="index.html">Strona Główna</a>
             <a href="categories.html">Kategorie</a>
             <a href="products.html">Produkty</a>
             <a href="contact.html">Kontakt</a>
@@ -36,22 +39,22 @@
 
 <main>
     <div class="thank-you">
-        <h1>Dziekujemy za zamowienie!</h1>
+        <h1>Dziękujemy za zamówienie!</h1>
         <p style="font-size: 18px; color: var(--text-light); margin-bottom: 20px;">
-            Numer zamowienia: <strong id="order-id"></strong>
+            Numer zamówienia: <strong id="order-id"></strong>
         </p>
         <p style="color: var(--text-light); margin-bottom: 30px;">
-            Potwierdzenie zostanie wyslane na Twoj adres email.
+            Potwierdzenie zostanie wysłane na Twój adres email. Zamówienie pakujemy starannie i wysyłamy w ciągu 2 dni roboczych.
         </p>
-        <a href="index.html" class="btn btn-primary">Wrocz na strone glowna</a>
+        <a href="index.html" class="btn btn-primary">Wróć na stronę główną</a>
     </div>
 </main>
 
 <footer>
     <div class="footer-content">
         <div class="footer-section">
-            <h3>Atramento</h3>
-            <p>Najlepszy sklep z atramentami i przyborami do kaligrafii w Polsce.</p>
+            <h3>Bobrownia</h3>
+            <p>Sklep dla bobrów ceniących jakość. Tradycja rzemiosła od pokoleń.</p>
         </div>
         <div class="footer-section">
             <h3>Informacje</h3>
@@ -61,18 +64,18 @@
         </div>
         <div class="footer-section">
             <h3>Kontakt</h3>
-            <p>ul. Kaligraficzna 15, Krakow</p>
+            <p>ul. Nad Strumieniem 7, Kraków</p>
             <p>Tel: +48 12 345 67 89</p>
-            <p>Email: sklep@atramento.pl</p>
+            <p>Email: sklep@bobrownia.pl</p>
         </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 Atramento — Strona deweloperska.</div>
+    <div class="footer-bottom">&copy; 2026 Bobrownia — Strona deweloperska.</div>
 </footer>
 
 <script>
 (function () {
     window._edrone = window._edrone || {};
-    _edrone.app_id = 'd9d6477ce6888';
+    _edrone.app_id = 'TEMP-bobrownia';
     _edrone.platform = 'custom';
     _edrone.version = '1.0';
     var s = document.createElement('script');
@@ -86,8 +89,7 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var params = new URLSearchParams(window.location.search);
-    var orderId = params.get('order') || '—';
-    document.getElementById('order-id').textContent = orderId;
+    document.getElementById('order-id').textContent = params.get('order') || '—';
 });
 </script>
 </body>

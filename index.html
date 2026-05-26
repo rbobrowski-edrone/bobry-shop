@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atramento — Sklep z Atramentami i Przyborami do Kaligrafii</title>
+    <title>Bobrownia — Sklep dla Współczesnego Bobra</title>
+    <meta name="description" content="Manufaktura bobrowa: premium kawałki drewna, materiały budowlane do żeremi, profesjonalne narzędzia do pielęgnacji zębów i wyselekcjonowane przekąski.">
+
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
     <div class="header-top">
-        <div class="logo"><a href="index.html"><span>Atramento</span></a></div>
+        <div class="logo"><a href="index.html"><img class="logo-icon" src="images/logo.jpeg" alt="Bobrownia — pieczęć"><span>Bobrownia</span></a></div>
         <nav>
-            <a href="index.html" class="active">Strona Glowna</a>
+            <a href="index.html" class="active">Strona Główna</a>
             <a href="categories.html">Kategorie</a>
             <a href="products.html">Produkty</a>
             <a href="contact.html">Kontakt</a>
@@ -39,8 +44,8 @@
 <footer>
     <div class="footer-content">
         <div class="footer-section">
-            <h3>Atramento</h3>
-            <p>Najlepszy sklep z atramentami i przyborami do kaligrafii w Polsce.</p>
+            <h3>Bobrownia</h3>
+            <p>Sklep dla bobrów ceniących jakość. Tradycja rzemiosła od pokoleń.</p>
         </div>
         <div class="footer-section">
             <h3>Informacje</h3>
@@ -50,12 +55,12 @@
         </div>
         <div class="footer-section">
             <h3>Kontakt</h3>
-            <p>ul. Kaligraficzna 15, Krakow</p>
+            <p>ul. Nad Strumieniem 7, Kraków</p>
             <p>Tel: +48 12 345 67 89</p>
-            <p>Email: sklep@atramento.pl</p>
+            <p>Email: sklep@bobrownia.pl</p>
         </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 Atramento — Strona deweloperska.</div>
+    <div class="footer-bottom">&copy; 2026 Bobrownia — Strona deweloperska.</div>
 </footer>
 
 <button class="simulator-toggle" onclick="toggleSimulator()">edrone Simulator</button>
@@ -73,7 +78,7 @@
 <script>
 (function () {
     window._edrone = window._edrone || {};
-    _edrone.app_id = 'd9d6477ce6888';
+    _edrone.app_id = 'TEMP-bobrownia';
     _edrone.platform = 'custom';
     _edrone.version = '1.0';
     var s = document.createElement('script');
@@ -87,36 +92,135 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var app = document.getElementById('app');
-    var featured = products.slice(0, 4);
 
-    app.innerHTML =
-        '<div class="hero">' +
-            '<h1>Sztuka Pisania</h1>' +
-            '<p>Odkryj swiat kaligrafii z najlepszymi atramentami, stalowkami i przyborami do pisania.</p>' +
-            '<a href="products.html" class="hero-btn">Zobacz produkty</a>' +
-        '</div>' +
-        '<h2 class="section-title">Kategorie</h2>' +
-        '<div class="categories-grid">' +
-            categories.map(function(c) {
-                return '<a class="category-card" href="products.html?cat=' + c.id + '">' +
-                    '<div class="category-icon">' + c.icon + '</div>' +
-                    '<h3>' + c.name + '</h3>' +
-                    '<p>' + products.filter(function(p) { return p.categoryId === c.id; }).length + ' produktow</p>' +
-                '</a>';
-            }).join('') +
-        '</div>' +
-        '<h2 class="section-title">Polecane produkty</h2>' +
-        '<div class="products-grid">' +
-            featured.map(function(p) { return productCardHTML(p); }).join('') +
-        '</div>' +
-        '<div class="newsletter">' +
-            '<h2>Newsletter</h2>' +
-            '<p>Zapisz sie, aby otrzymywac informacje o nowosciach i promocjach.</p>' +
-            '<div class="newsletter-form">' +
-                '<input type="email" id="newsletter-email" placeholder="Twoj adres email..." />' +
-                '<button class="btn btn-accent" onclick="subscribeNL()">Zapisz sie</button>' +
-            '</div>' +
-        '</div>';
+    // Polecane produkty: 4 losowe, po jednym z różnych kategorii (różnorodność > powtórki)
+    var shuffled = products.slice().sort(function() { return Math.random() - 0.5; });
+    var seenCategories = {};
+    var featured = [];
+    for (var i = 0; i < shuffled.length && featured.length < 4; i++) {
+        if (!seenCategories[shuffled[i].categoryId]) {
+            seenCategories[shuffled[i].categoryId] = true;
+            featured.push(shuffled[i]);
+        }
+    }
+    // fallback gdyby kategorii było mniej niż 4 — dobierz pozostałe losowo
+    for (var j = 0; j < shuffled.length && featured.length < 4; j++) {
+        if (featured.indexOf(shuffled[j]) === -1) featured.push(shuffled[j]);
+    }
+
+    var heroIllustration = '<img src="images/hero.png" alt="Pracownia bobra-architekta — plany żeremia, narzędzia kreślarskie i tablet z modelem 3D">';
+
+    var divider = `<div class="section-divider"><svg viewBox="0 0 200 22" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M 5 11 Q 30 4 55 11 T 105 11 T 155 11 T 195 11" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="100" cy="11" r="3.5" fill="currentColor"/></svg></div>`;
+
+    app.innerHTML = `
+        <div class="hero-split">
+            <div class="hero-text">
+                <span class="hero-eyebrow">Manufaktura bobrowa · od 2024 · z agentami od 2025</span>
+                <h1>Wszystko dla <em>Współczesnego</em> Bobra</h1>
+                <p>Premium kawałki drewna, profesjonalne zaprawy do żeremi, narzędzia do pielęgnacji siekaczy, wyselekcjonowane przekąski — oraz LLM-y, serwery MCP i pliki .skill dla bobrów-builderów. Rzemiosło, które przetrwa każdą powódź &mdash; i każdy refactor.</p>
+                <a href="products.html" class="hero-btn">Zobacz asortyment</a>
+            </div>
+            <div class="hero-visual">${heroIllustration}</div>
+        </div>
+
+        ${divider}
+
+        <h2 class="section-title">Asortyment</h2>
+        <div class="categories-grid">
+            ${categories.map(function(c) {
+                return `<a class="category-card" href="products.html?cat=${c.id}">
+                    <div class="category-icon">${c.icon}</div>
+                    <h3>${c.name}</h3>
+                    <p>${products.filter(function(p) { return p.categoryId === c.id; }).length} produktów</p>
+                </a>`;
+            }).join('')}
+        </div>
+
+        ${divider}
+
+        <h2 class="section-title">Polecane <em>produkty</em></h2>
+        <div class="products-grid">
+            ${featured.map(function(p) { return productCardHTML(p); }).join('')}
+        </div>
+
+        <section class="manifest">
+            <p class="manifest-quote">Najmądrzejszy bóbr wie, kiedy zapytać LLM, a kiedy własnych siekaczy.</p>
+            <p class="manifest-attribution">— Komentarz seniora w code review, 2025</p>
+            <div class="manifest-values">
+                <div class="manifest-value">
+                    <svg class="manifest-value-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                    <h3>Selekcja</h3>
+                    <p>Każdy patyk, gałąź i porcja zaprawy przechodzi ręczną kontrolę jakości. Bez kompromisów, bez wypełniaczy.</p>
+                </div>
+                <div class="manifest-value">
+                    <svg class="manifest-value-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M13.5 6.5l4 4"/>
+                        <path d="M16 3l5 5-10 10-5-5z"/>
+                        <path d="M6 13l-3 3 5 5 3-3"/>
+                    </svg>
+                    <h3>Rzemiosło</h3>
+                    <p>Trzydzieści dziewięć lat doświadczenia w produkcji materiałów dla najbardziej wymagających Castor fiber w regionie.</p>
+                </div>
+                <div class="manifest-value">
+                    <svg class="manifest-value-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96c1.4 9.3-3.7 11.3-8.2 17.04z"/>
+                        <path d="M2 21c0-3 1.85-5.36 5.08-6"/>
+                    </svg>
+                    <h3>Natura</h3>
+                    <p>Wszystkie surowce pochodzą z polskich lasów, bagien i czystych źródeł. Zero syntetyki, zero konserwantów.</p>
+                </div>
+                <div class="manifest-value">
+                    <svg class="manifest-value-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+                    </svg>
+                    <h3>Algorytm</h3>
+                    <p>Computer vision pomaga selekcjonować patyki, agenci doradzają w architekturze. Ostateczną decyzję zawsze podejmuje bóbr.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="digital-lab">
+            <span class="lab-eyebrow">Pracownia Cyfrowa</span>
+            <h2 class="section-title">Tradycja podejmuje decyzje. <em>Algorytm</em> tylko liczy.</h2>
+            <div class="lab-grid">
+                <div class="lab-card">
+                    <div class="lab-card-stat">97<span>%</span></div>
+                    <div class="lab-card-label">Trafność klasyfikacji</div>
+                    <h3>Selekcja Computer Vision</h3>
+                    <p>Każdy patyk fotografujemy na taśmie produkcyjnej i klasyfikujemy konwolucyjną siecią neuronową na pięć klas jakości. Bóbr-mistrz weryfikuje tylko klasy granicznie.</p>
+                </div>
+                <div class="lab-card">
+                    <div class="lab-card-stat">12<span>min</span></div>
+                    <div class="lab-card-label">Średni czas konsultacji</div>
+                    <h3>Agent Architekt Żeremia</h3>
+                    <p>Beaver 2.1 Pro Instruct doradza klientom B2B w optymalizacji konstrukcji żeremia. Działa przez nasz MCP server, integruje się z Claude Desktop i Cursor.</p>
+                </div>
+                <div class="lab-card">
+                    <div class="lab-card-stat">48<span>h</span></div>
+                    <div class="lab-card-label">Wyprzedzenie alertu</div>
+                    <h3>Predykcja Roztopów</h3>
+                    <p>Model LSTM łączy dane z 12 stacji hydrologicznych i prognozy IMGW. Wysyła alerty 48h przed pierwszą falą wody — czas na wzmocnienie tamy.</p>
+                </div>
+            </div>
+            <p class="lab-signature">
+                Wszystkie modele trenowane in-house na <strong>Beaver 2.1 Pro</strong> · 13B parametrów · context 128k · fine-tuning na 40 000 planów żeremi z lat 1923&ndash;2025.
+            </p>
+        </section>
+
+
+        <div class="newsletter">
+            <h2>Zapisz się do newslettera Bobrowni</h2>
+            <p>Bądź pierwszy w żeremiu — nowości produktowe, sezonowe oferty i porady architektoniczne raz w miesiącu.</p>
+            <div class="newsletter-form">
+                <input type="email" id="newsletter-email" placeholder="Twój adres email..." />
+                <button class="btn btn-accent" onclick="subscribeNL()">Zapisz się</button>
+            </div>
+        </div>
+    `;
 
     edroneHomepageView();
 });
@@ -124,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function subscribeNL() {
     var emailEl = document.getElementById('newsletter-email');
     var email = emailEl.value.trim();
-    if (!email || email.indexOf('@') === -1) { showToast('Prosze podac poprawny email'); return; }
+    if (!email || email.indexOf('@') === -1) { showToast('Proszę podać poprawny email'); return; }
     edroneSubscribe(email, '', 'Newsletter Footer');
     emailEl.value = '';
     showToast('Zapisano do newslettera!');

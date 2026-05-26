@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <defs>
+    <pattern id="weave001" patternUnits="userSpaceOnUse" width="14" height="14" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="14" stroke="#A67C3A" stroke-width="0.5" opacity="0.35"/>
+    </pattern>
+    <filter id="cardshadow001" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#2A1F15" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="600" height="600" fill="#F5EFE6"/>
+  <rect width="600" height="600" fill="url(#weave001)"/>
+  <g transform="translate(50 70)" filter="url(#cardshadow001)">
+    <rect x="0" y="0" width="500" height="460" rx="6" fill="#FFFFFF" stroke="#D9CFC0" stroke-width="1"/>
+    <path d="M 0 6 Q 0 0 6 0 L 494 0 Q 500 0 500 6 L 500 56 L 0 56 Z" fill="#3D2817"/>
+    <rect x="0" y="56" width="500" height="3" fill="#A67C3A"/>
+    <text x="24" y="36" font-family="ui-monospace, SF Mono, Menlo, Consolas, monospace" font-size="16" fill="#F5EFE6" font-weight="500">tree-species-detector.skill</text>
+    <text x="476" y="38" font-family="Georgia, serif" font-size="22" fill="#A67C3A" font-weight="700" text-anchor="end" font-style="italic">49 zł</text>
+    <g transform="translate(24 96)" font-family="ui-monospace, SF Mono, Menlo, Consolas, monospace" font-size="14" fill="#2A1F15">
+      <text x="0" y="0">name: <tspan fill="#6B4423">tree-species-detector</tspan></text>
+      <text x="0" y="26">opis: Uruchom gdy bóbr potrzebuje</text>
+      <text x="0" y="48">  rozpoznać gatunek drzewa ze zdjęcia</text>
+      <text x="0" y="70">  kory lub próbki drewna. Zwraca</text>
+      <text x="0" y="92">  nazwę gatunku, klasę twardości</text>
+      <text x="0" y="114">  (1-5) i rekomendowane zastosowanie.</text>
+      <text x="0" y="148">triggery:</text>
+      <text x="0" y="170">  - <tspan fill="#A67C3A">"co to za drzewo"</tspan></text>
+      <text x="0" y="192">  - <tspan fill="#A67C3A">"rozpoznaj korę"</tspan></text>
+      <text x="0" y="214">  - <tspan fill="#A67C3A">"jaki gatunek"</tspan></text>
+      <text x="0" y="248">model: <tspan fill="#6B4423" font-style="italic">Beaver 2.1 Pro Vision</tspan></text>
+      <text x="0" y="304" font-size="12" fill="#6B5C4F" font-style="italic">// ~3 KB · gotowy do ~/.claude/skills/</text>
+    </g>
+  </g>
+  <g opacity="0.45" transform="translate(540 552)">
+    <circle cx="-9" cy="-15" r="3.5" fill="#3D2817"/>
+    <circle cx="9" cy="-15" r="3.5" fill="#3D2817"/>
+    <ellipse cx="0" cy="-3" rx="15" ry="11" fill="#3D2817"/>
+    <ellipse cx="0" cy="3" rx="9" ry="5" fill="#2A1810"/>
+    <ellipse cx="0" cy="1.5" rx="2.2" ry="1.4" fill="#A67C3A"/>
+    <circle cx="-6" cy="-7" r="1.7" fill="#1A0F08"/>
+    <circle cx="6" cy="-7" r="1.7" fill="#1A0F08"/>
+    <rect x="-3" y="5" width="2.2" height="6" rx="0.4" fill="#FAF6F0"/>
+    <rect x="0.8" y="5" width="2.2" height="6" rx="0.4" fill="#FAF6F0"/>
+  </g>
+</svg>

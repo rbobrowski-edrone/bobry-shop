@@ -1,228 +1,316 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
 <channel>
-<title>Atramento - Sklep z Atramentami i Przyborami do Kaligrafii</title>
-<link>https://okowalow.github.io/store/</link>
-<description>Sklep z atramentami i przyborami do kaligrafii</description>
+<title>Bobrownia — Sklep dla Współczesnego Bobra</title>
+<link>https://bobry-shop.pl/</link>
+<description>Manufaktura bobrowa: premium kawałki drewna, materiały budowlane do żeremi, profesjonalne narzędzia do pielęgnacji zębów i wyselekcjonowane przekąski.</description>
 <item>
-  <g:id>INK-001</g:id>
-  <title>Atrament Czarny Klasyczny 50ml</title>
-  <link>https://okowalow.github.io/store/product.html?id=INK-001</link>
-  <g:image_link>https://okowalow.github.io/store/images/INK-001.jpg</g:image_link>
-  <g:price>29.99 PLN</g:price>
+  <g:id>WOD-001</g:id>
+  <title>Patyk Brzozowy Premium "Mistrzowski" 30cm</title>
+  <link>https://bobry-shop.pl/product.html?id=WOD-001</link>
+  <g:image_link>https://bobry-shop.pl/images/WOD-001.png</g:image_link>
+  <g:price>24.99 PLN</g:price>
   <g:availability>in stock</g:availability>
-  <g:brand>Atramento</g:brand>
-  <g:product_type>Atramenty</g:product_type>
-  <description>Klasyczny czarny atrament do kaligrafii. Doskonala plynnosc, gleboka czern.</description>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Drewno &amp; Patyki</g:product_type>
+  <description>Ręcznie selekcjonowany patyk brzozowy z lasów Roztocza. Idealny balans giętkości i kruchości, sprawdzony przez trzy pokolenia bobrów Kowalskich. Średnica 2cm, długość 30cm. Bez sęków.</description>
 </item>
 <item>
-  <g:id>INK-002</g:id>
-  <title>Atrament Sepia Vintage 30ml</title>
-  <link>https://okowalow.github.io/store/product.html?id=INK-002</link>
-  <g:image_link>https://okowalow.github.io/store/images/INK-002.jpg</g:image_link>
-  <g:price>34.99 PLN</g:price>
+  <g:id>WOD-002</g:id>
+  <title>Gałąź Osikowa Codziennego Użytku 50cm</title>
+  <link>https://bobry-shop.pl/product.html?id=WOD-002</link>
+  <g:image_link>https://bobry-shop.pl/images/WOD-002.png</g:image_link>
+  <g:price>18.99 PLN</g:price>
   <g:availability>in stock</g:availability>
-  <g:brand>Atramento</g:brand>
-  <g:product_type>Atramenty</g:product_type>
-  <description>Atrament w kolorze sepii, inspirowany historycznymi dokumentami.</description>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Drewno &amp; Patyki</g:product_type>
+  <description>Klasyczna gałąź osiki — nasz bestseller od 2024 roku. Lekka, łatwa w transporcie, doskonała zarówno do prac konstrukcyjnych jak i wieczornych przekąsek. Sprzedawana na sztuki.</description>
 </item>
 <item>
-  <g:id>INK-003</g:id>
-  <title>Atrament Blekitny Niebo 50ml</title>
-  <link>https://okowalow.github.io/store/product.html?id=INK-003</link>
-  <g:image_link>https://okowalow.github.io/store/images/INK-003.jpg</g:image_link>
-  <g:price>32.99 PLN</g:price>
-  <g:availability>in stock</g:availability>
-  <g:brand>Atramento</g:brand>
-  <g:product_type>Atramenty</g:product_type>
-  <description>Delikatny blekitny atrament o subtelnym odcieniu nieba.</description>
-</item>
-<item>
-  <g:id>INK-004</g:id>
-  <title>Zestaw Atramentow 6 kolorow</title>
-  <link>https://okowalow.github.io/store/product.html?id=INK-004</link>
-  <g:image_link>https://okowalow.github.io/store/images/INK-004.jpg</g:image_link>
+  <g:id>WOD-003</g:id>
+  <title>Polano Dębowe Reserva 18 miesięcy</title>
+  <link>https://bobry-shop.pl/product.html?id=WOD-003</link>
+  <g:image_link>https://bobry-shop.pl/images/WOD-003.png</g:image_link>
   <g:price>89.99 PLN</g:price>
   <g:availability>in stock</g:availability>
-  <g:brand>Atramento</g:brand>
-  <g:product_type>Atramenty</g:product_type>
-  <description>Zestaw szesciu atramentow w roznych kolorach.</description>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Drewno &amp; Patyki</g:product_type>
+  <description>Dębowe polano sezonowane 18 miesięcy w naszej suszarni nad Wisłą. Aromat tytoniu i wanilii, długie wykończenie. Limitowana edycja jesienna. Ok. 4kg.</description>
 </item>
 <item>
-  <g:id>NIB-001</g:id>
-  <title>Stalowka Nikko G</title>
-  <link>https://okowalow.github.io/store/product.html?id=NIB-001</link>
-  <g:image_link>https://okowalow.github.io/store/images/NIB-001.jpg</g:image_link>
-  <g:price>12.99 PLN</g:price>
+  <g:id>WOD-004</g:id>
+  <title>Zestaw Craftowy Mieszany 12 szt.</title>
+  <link>https://bobry-shop.pl/product.html?id=WOD-004</link>
+  <g:image_link>https://bobry-shop.pl/images/WOD-004.png</g:image_link>
+  <g:price>64.99 PLN</g:price>
   <g:availability>in stock</g:availability>
-  <g:brand>Nikko</g:brand>
-  <g:product_type>Stalowki</g:product_type>
-  <description>Popularna stalowka Nikko G, idealna dla poczatkujacych.</description>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Drewno &amp; Patyki</g:product_type>
+  <description>Wyselekcjonowany mix: brzoza, osika, wierzba, topola — po 3 kawałki każdego gatunku. Z dołączoną kartą degustacyjną i sugerowanym pairingiem do projektów żeremiowych.</description>
 </item>
 <item>
-  <g:id>NIB-002</g:id>
-  <title>Stalowka Brause Steno Blue Pumpkin</title>
-  <link>https://okowalow.github.io/store/product.html?id=NIB-002</link>
-  <g:image_link>https://okowalow.github.io/store/images/NIB-002.jpg</g:image_link>
-  <g:price>8.99 PLN</g:price>
-  <g:availability>in stock</g:availability>
-  <g:brand>Brause</g:brand>
-  <g:product_type>Stalowki</g:product_type>
-  <description>Stalowka Brause o sredniej elastycznosci.</description>
-</item>
-<item>
-  <g:id>NIB-003</g:id>
-  <title>Stalowka Hunt 101</title>
-  <link>https://okowalow.github.io/store/product.html?id=NIB-003</link>
-  <g:image_link>https://okowalow.github.io/store/images/NIB-003.jpg</g:image_link>
-  <g:price>14.99 PLN</g:price>
-  <g:availability>in stock</g:availability>
-  <g:brand>Hunt</g:brand>
-  <g:product_type>Stalowki</g:product_type>
-  <description>Profesjonalna stalowka Hunt 101 z duzym zbiornikiem atramentu.</description>
-</item>
-<item>
-  <g:id>NIB-004</g:id>
-  <title>Zestaw stalowek 10 szt.</title>
-  <link>https://okowalow.github.io/store/product.html?id=NIB-004</link>
-  <g:image_link>https://okowalow.github.io/store/images/NIB-004.jpg</g:image_link>
-  <g:price>49.99 PLN</g:price>
-  <g:availability>in stock</g:availability>
-  <g:brand>Atramento</g:brand>
-  <g:product_type>Stalowki</g:product_type>
-  <description>Zestaw dziesieciu roznych stalowek do kaligrafii.</description>
-</item>
-<item>
-  <g:id>PEN-001</g:id>
-  <title>Pioro Wieczne Lamy Safari</title>
-  <link>https://okowalow.github.io/store/product.html?id=PEN-001</link>
-  <g:image_link>https://okowalow.github.io/store/images/PEN-001.jpg</g:image_link>
-  <g:price>149.99 PLN</g:price>
-  <g:availability>in stock</g:availability>
-  <g:brand>Lamy</g:brand>
-  <g:product_type>Piora wieczne</g:product_type>
-  <description>Kultowe pioro wieczne Lamy Safari. Ergonomiczny chwyt, wymienne naboje.</description>
-</item>
-<item>
-  <g:id>PEN-002</g:id>
-  <title>Pioro Wieczne Platinum Preppy</title>
-  <link>https://okowalow.github.io/store/product.html?id=PEN-002</link>
-  <g:image_link>https://okowalow.github.io/store/images/PEN-002.jpg</g:image_link>
-  <g:price>39.99 PLN</g:price>
-  <g:availability>in stock</g:availability>
-  <g:brand>Platinum</g:brand>
-  <g:product_type>Piora wieczne</g:product_type>
-  <description>Niedrogie pioro wieczne Platinum Preppy. Swietne dla poczatkujacych.</description>
-</item>
-<item>
-  <g:id>PEN-003</g:id>
-  <title>Pioro Wieczne TWSBI Eco</title>
-  <link>https://okowalow.github.io/store/product.html?id=PEN-003</link>
-  <g:image_link>https://okowalow.github.io/store/images/PEN-003.jpg</g:image_link>
-  <g:price>219.99 PLN</g:price>
-  <g:availability>in stock</g:availability>
-  <g:brand>TWSBI</g:brand>
-  <g:product_type>Piora wieczne</g:product_type>
-  <description>Pioro tlokowe TWSBI Eco z przezroczystym korpusem.</description>
-</item>
-<item>
-  <g:id>PEN-004</g:id>
-  <title>Pioro Wieczne Parker Sonnet</title>
-  <link>https://okowalow.github.io/store/product.html?id=PEN-004</link>
-  <g:image_link>https://okowalow.github.io/store/images/PEN-004.jpg</g:image_link>
-  <g:price>459.99 PLN</g:price>
-  <g:availability>in stock</g:availability>
-  <g:brand>Parker</g:brand>
-  <g:product_type>Piora wieczne</g:product_type>
-  <description>Eleganckie pioro wieczne Parker Sonnet ze zlotym stalowka 18K.</description>
-</item>
-<item>
-  <g:id>PAP-001</g:id>
-  <title>Blok do Kaligrafii A4 100 ark.</title>
-  <link>https://okowalow.github.io/store/product.html?id=PAP-001</link>
-  <g:image_link>https://okowalow.github.io/store/images/PAP-001.jpg</g:image_link>
-  <g:price>44.99 PLN</g:price>
-  <g:availability>in stock</g:availability>
-  <g:brand>Atramento</g:brand>
-  <g:product_type>Papier i Pergaminy</g:product_type>
-  <description>Blok papieru do kaligrafii formatu A4, 100 arkuszy.</description>
-</item>
-<item>
-  <g:id>PAP-002</g:id>
-  <title>Pergamin Naturalny A3</title>
-  <link>https://okowalow.github.io/store/product.html?id=PAP-002</link>
-  <g:image_link>https://okowalow.github.io/store/images/PAP-002.jpg</g:image_link>
-  <g:price>19.99 PLN</g:price>
-  <g:availability>in stock</g:availability>
-  <g:brand>Atramento</g:brand>
-  <g:product_type>Papier i Pergaminy</g:product_type>
-  <description>Autentyczny pergamin formatu A3. Naturalny kolor.</description>
-</item>
-<item>
-  <g:id>PAP-003</g:id>
-  <title>Papier Bawelniany Kremowy 25 ark.</title>
-  <link>https://okowalow.github.io/store/product.html?id=PAP-003</link>
-  <g:image_link>https://okowalow.github.io/store/images/PAP-003.jpg</g:image_link>
-  <g:price>54.99 PLN</g:price>
-  <g:availability>in stock</g:availability>
-  <g:brand>Atramento</g:brand>
-  <g:product_type>Papier i Pergaminy</g:product_type>
-  <description>Luksusowy papier bawelniany w kolorze kremowym. 25 arkuszy.</description>
-</item>
-<item>
-  <g:id>PAP-004</g:id>
-  <title>Zwoj Pergaminu 5m</title>
-  <link>https://okowalow.github.io/store/product.html?id=PAP-004</link>
-  <g:image_link>https://okowalow.github.io/store/images/PAP-004.jpg</g:image_link>
+  <g:id>BLD-001</g:id>
+  <title>Zaprawa do Żeremi "ŻereMix Pro" 5kg</title>
+  <link>https://bobry-shop.pl/product.html?id=BLD-001</link>
+  <g:image_link>https://bobry-shop.pl/images/BLD-001.png</g:image_link>
   <g:price>79.99 PLN</g:price>
   <g:availability>in stock</g:availability>
-  <g:brand>Atramento</g:brand>
-  <g:product_type>Papier i Pergaminy</g:product_type>
-  <description>Zwoj pergaminu o dlugosci 5 metrow.</description>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Materiały Budowlane</g:product_type>
+  <description>Profesjonalna zaprawa na bazie gliny bagiennej i mchu wodoodpornego. Schnie pod wodą, odporna na erozję, rekomendowana przez Stowarzyszenie Architektów Żeremiowych. Wystarcza na ok. 2m² powierzchni.</description>
+</item>
+<item>
+  <g:id>BLD-002</g:id>
+  <title>Uszczelniacz do Tam EkoStop 1L</title>
+  <link>https://bobry-shop.pl/product.html?id=BLD-002</link>
+  <g:image_link>https://bobry-shop.pl/images/BLD-002.png</g:image_link>
+  <g:price>49.99 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Materiały Budowlane</g:product_type>
+  <description>Naturalny uszczelniacz na bazie żywicy świerkowej. Wodoodporny do 8 atmosfer, mrozoodporny do -25°C, bezpieczny dla ryb i roślin wodnych. Aplikator w zestawie.</description>
+</item>
+<item>
+  <g:id>BLD-003</g:id>
+  <title>Mech Sphagnum Klasa A 2kg</title>
+  <link>https://bobry-shop.pl/product.html?id=BLD-003</link>
+  <g:image_link>https://bobry-shop.pl/images/BLD-003.png</g:image_link>
+  <g:price>34.99 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Materiały Budowlane</g:product_type>
+  <description>Premium mech torfowy zbierany ręcznie na Bagnach Biebrzańskich. Doskonała izolacja termiczna i akustyczna żeremia. Naturalnie antybakteryjny. Pakowany w worku oddychającym.</description>
+</item>
+<item>
+  <g:id>BLD-004</g:id>
+  <title>Glina Bagienna "DamSeal" Premium 10kg</title>
+  <link>https://bobry-shop.pl/product.html?id=BLD-004</link>
+  <g:image_link>https://bobry-shop.pl/images/BLD-004.png</g:image_link>
+  <g:price>56.99 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Materiały Budowlane</g:product_type>
+  <description>Drobnoziarnista glina z czystych źródeł podlaskich, gotowa do użycia. Idealna do uszczelniania krytycznych elementów konstrukcyjnych. Wiadro z ergonomicznym uchwytem do transportu w zębach.</description>
+</item>
+<item>
+  <g:id>TTH-001</g:id>
+  <title>Kamień Ostrzący Arkansas "SiekaczMaster"</title>
+  <link>https://bobry-shop.pl/product.html?id=TTH-001</link>
+  <g:image_link>https://bobry-shop.pl/images/TTH-001.png</g:image_link>
+  <g:price>119.99 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Pielęgnacja Zębów</g:product_type>
+  <description>Naturalny kamień ostrzący z USA, gradacja 1200. Klasyczna pomoc w codziennej pielęgnacji siekaczy. Dwustronny: zgrubny i wykańczający. Z futerałem z naturalnej skóry.</description>
+</item>
+<item>
+  <g:id>TTH-002</g:id>
+  <title>Pasta do Polerowania Siekaczy "EmaliaShine" 50ml</title>
+  <link>https://bobry-shop.pl/product.html?id=TTH-002</link>
+  <g:image_link>https://bobry-shop.pl/images/TTH-002.png</g:image_link>
+  <g:price>39.99 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Pielęgnacja Zębów</g:product_type>
+  <description>Naturalna pasta z mikrokryształkami krzemienia i ekstraktem z dębu. Wzmacnia szkliwo, usuwa naloty po korze brzozowej, zostawia delikatny aromat sosny. Tubka starcza na ok. 3 miesiące.</description>
+</item>
+<item>
+  <g:id>TTH-003</g:id>
+  <title>Krzemień Mistrzowski 2000 grit</title>
+  <link>https://bobry-shop.pl/product.html?id=TTH-003</link>
+  <g:image_link>https://bobry-shop.pl/images/TTH-003.png</g:image_link>
+  <g:price>89.99 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Pielęgnacja Zębów</g:product_type>
+  <description>Drobnoziarnisty krzemień do finalnego ostrzenia. Wykończenie lustrzane, gotowe na każdą gałąź. Pochodzenie: kopalnia w Krzemionkach Opatowskich. Z certyfikatem autentyczności.</description>
+</item>
+<item>
+  <g:id>TTH-004</g:id>
+  <title>Olejek do Pielęgnacji Szkliwa "ZębOil" 30ml</title>
+  <link>https://bobry-shop.pl/product.html?id=TTH-004</link>
+  <g:image_link>https://bobry-shop.pl/images/TTH-004.png</g:image_link>
+  <g:price>29.99 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Pielęgnacja Zębów</g:product_type>
+  <description>Mieszanka olejków: migdałowy, jojoba, ekstrakt z propolisu. Codzienna pielęgnacja, ochrona przed mikropęknięciami. Aplikator z pędzelkiem z naturalnego włosia.</description>
+</item>
+<item>
+  <g:id>SNK-001</g:id>
+  <title>Kora Brzozowa Suszona "Chrupka" 200g</title>
+  <link>https://bobry-shop.pl/product.html?id=SNK-001</link>
+  <g:image_link>https://bobry-shop.pl/images/SNK-001.png</g:image_link>
+  <g:price>22.99 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Przekąski</g:product_type>
+  <description>Chrupiąca kora brzozowa, suszona naturalnie 48h. Delikatny smak migdałów, lekko goryczkowy finisz. Idealna na wieczorną przekąskę przy budowie tamy. Bez konserwantów.</description>
+</item>
+<item>
+  <g:id>SNK-002</g:id>
+  <title>Pączki Wierzbowe w Marynacie 150g</title>
+  <link>https://bobry-shop.pl/product.html?id=SNK-002</link>
+  <g:image_link>https://bobry-shop.pl/images/SNK-002.png</g:image_link>
+  <g:price>28.99 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Przekąski</g:product_type>
+  <description>Wczesnowiosenne pączki wierzby białej marynowane w soli morskiej i ziołach. Tekstura jak kapary, smak ziołowy, świeży. Pairing idealny z polanem dębowym. Słoik 150g.</description>
+</item>
+<item>
+  <g:id>SNK-003</g:id>
+  <title>Korzonki Tatarakowe Snack 100g</title>
+  <link>https://bobry-shop.pl/product.html?id=SNK-003</link>
+  <g:image_link>https://bobry-shop.pl/images/SNK-003.png</g:image_link>
+  <g:price>19.99 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Przekąski</g:product_type>
+  <description>Suszone korzonki tataraku z Mazur. Aromat goździków i imbiru, lekko ostry finisz. Tradycyjna przekąska bobrowa, znana z właściwości trawiennych. Saszetka resealable.</description>
+</item>
+<item>
+  <g:id>SNK-004</g:id>
+  <title>Mix Liściasty Premium 250g</title>
+  <link>https://bobry-shop.pl/product.html?id=SNK-004</link>
+  <g:image_link>https://bobry-shop.pl/images/SNK-004.png</g:image_link>
+  <g:price>26.99 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Przekąski</g:product_type>
+  <description>Suszony mix liści: topola, osika, wierzba, jesion. Różnorodność tekstur i smaków w jednym opakowaniu. Idealne na dłuższe wyprawy poza terytorium.</description>
 </item>
 <item>
   <g:id>SET-001</g:id>
-  <title>Zestaw Startowy do Kaligrafii</title>
-  <link>https://okowalow.github.io/store/product.html?id=SET-001</link>
-  <g:image_link>https://okowalow.github.io/store/images/SET-001.jpg</g:image_link>
-  <g:price>129.99 PLN</g:price>
+  <title>Zestaw Startowy "Młody Bóbr"</title>
+  <link>https://bobry-shop.pl/product.html?id=SET-001</link>
+  <g:image_link>https://bobry-shop.pl/images/SET-001.png</g:image_link>
+  <g:price>149.99 PLN</g:price>
   <g:availability>in stock</g:availability>
-  <g:brand>Atramento</g:brand>
-  <g:product_type>Zestawy kaligraficzne</g:product_type>
-  <description>Kompletny zestaw dla poczatkujacych: 3 stalowki, uchwyt, atrament czarny, blok A5.</description>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Zestawy &amp; Prezenty</g:product_type>
+  <description>Wszystko czego potrzebujesz do pierwszej tamy: 5 patyków konstrukcyjnych, 1kg zaprawy ŻereMix, mała tubka uszczelniacza, ilustrowany przewodnik "Twoja pierwsza tama w 7 krokach". Idealny prezent dla młodego pokolenia.</description>
 </item>
 <item>
   <g:id>SET-002</g:id>
-  <title>Zestaw Profesjonalny Copperplate</title>
-  <link>https://okowalow.github.io/store/product.html?id=SET-002</link>
-  <g:image_link>https://okowalow.github.io/store/images/SET-002.jpg</g:image_link>
-  <g:price>249.99 PLN</g:price>
+  <title>Zestaw Profesjonalny "Architekt Żeremia"</title>
+  <link>https://bobry-shop.pl/product.html?id=SET-002</link>
+  <g:image_link>https://bobry-shop.pl/images/SET-002.png</g:image_link>
+  <g:price>449.99 PLN</g:price>
   <g:availability>in stock</g:availability>
-  <g:brand>Atramento</g:brand>
-  <g:product_type>Zestawy kaligraficzne</g:product_type>
-  <description>Zestaw profesjonalny do stylu copperplate.</description>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Zestawy &amp; Prezenty</g:product_type>
+  <description>Kompletny zestaw dla zaawansowanych: 5kg ŻereMix, 1L uszczelniacza, 2kg mchu, miarka składana 3m, plan architektoniczny żeremia DIY i roczna subskrypcja kwartalnika "Współczesne Żeremie".</description>
 </item>
 <item>
   <g:id>SET-003</g:id>
-  <title>Zestaw Pioro + Atrament Gift Box</title>
-  <link>https://okowalow.github.io/store/product.html?id=SET-003</link>
-  <g:image_link>https://okowalow.github.io/store/images/SET-003.jpg</g:image_link>
-  <g:price>189.99 PLN</g:price>
+  <title>Pakiet Powodziowy "EmergencyDam"</title>
+  <link>https://bobry-shop.pl/product.html?id=SET-003</link>
+  <g:image_link>https://bobry-shop.pl/images/SET-003.png</g:image_link>
+  <g:price>199.99 PLN</g:price>
   <g:availability>in stock</g:availability>
-  <g:brand>Atramento</g:brand>
-  <g:product_type>Zestawy kaligraficzne</g:product_type>
-  <description>Elegancki zestaw prezentowy: pioro wieczne i atrament w ozdobnym pudelku.</description>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Zestawy &amp; Prezenty</g:product_type>
+  <description>Zestaw awaryjny na wiosenne roztopy: szybkoschnąca zaprawa 2kg, uszczelniacz ekspresowy 500ml, 10 patyków konstrukcyjnych, latarka czołowa wodoodporna. Pakowane w worek wodoszczelny.</description>
 </item>
 <item>
   <g:id>SET-004</g:id>
-  <title>Zestaw Brush Lettering</title>
-  <link>https://okowalow.github.io/store/product.html?id=SET-004</link>
-  <g:image_link>https://okowalow.github.io/store/images/SET-004.jpg</g:image_link>
-  <g:price>99.99 PLN</g:price>
+  <title>Pakiet Premium "Castor Lifestyle"</title>
+  <link>https://bobry-shop.pl/product.html?id=SET-004</link>
+  <g:image_link>https://bobry-shop.pl/images/SET-004.png</g:image_link>
+  <g:price>329.99 PLN</g:price>
   <g:availability>in stock</g:availability>
-  <g:brand>Atramento</g:brand>
-  <g:product_type>Zestawy kaligraficzne</g:product_type>
-  <description>Zestaw do brush letteringu: 6 brush penow, blok papieru, poradnik.</description>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Zestawy &amp; Prezenty</g:product_type>
+  <description>Wykwintny prezent: dębowe polano Reserva 18m, kamień ostrzący Arkansas, słoik pączków wierzbowych, kora brzozowa premium 200g. W eleganckim drewnianym pudełku z grawerunkiem.</description>
+</item>
+<item>
+  <g:id>AID-001</g:id>
+  <title>ŻereGPT Pro · Doradca Architektoniczny LLM-as-a-Service</title>
+  <link>https://bobry-shop.pl/product.html?id=AID-001</link>
+  <g:image_link>https://bobry-shop.pl/images/AID-001.png</g:image_link>
+  <g:price>599.00 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Cyfrowa Pracownia</g:product_type>
+  <description>Personalny agent oparty na modelu Beaver 2.1 Pro, dofinetiunowany na 40 000 planów żeremi z lat 1923–2025. Doradza w doborze gatunków drewna, optymalizacji kąta tamy i wytrzymałości konstrukcji. Dostęp przez REST API, dedykowany MCP server lub przeglądarkowe UI. Subskrypcja roczna.</description>
+</item>
+<item>
+  <g:id>AID-002</g:id>
+  <title>Castor MCP Hub · Hostowany Serwer MCP</title>
+  <link>https://bobry-shop.pl/product.html?id=AID-002</link>
+  <g:image_link>https://bobry-shop.pl/images/AID-002.png</g:image_link>
+  <g:price>49.00 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Cyfrowa Pracownia</g:product_type>
+  <description>Zarządzany serwer MCP z 24 narzędziami specyficznymi dla branży bobrowej: stan magazynu, integracja IMGW, symulator tamy, dane hydrologiczne, optymalizator zapraw, generator faktur. SLA 99.9%, audit logi, RBAC. Wsparcie dla Claude Desktop, Claude Code, Cursor i Windsurf. Subskrypcja miesięczna.</description>
+</item>
+<item>
+  <g:id>AID-003</g:id>
+  <title>Pattern Pack · 240+ Promptów dla Bobra-Buildera</title>
+  <link>https://bobry-shop.pl/product.html?id=AID-003</link>
+  <g:image_link>https://bobry-shop.pl/images/AID-003.png</g:image_link>
+  <g:price>89.00 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Cyfrowa Pracownia</g:product_type>
+  <description>Wyselekcjonowana kolekcja 240+ promptów wypracowanych przez seniorów. Cztery moduły: Codzienne Rzemiosło, Architektura Tam, Ocena Przekąsek, Dokumentacja Żeremia. Format markdown z YAML frontmatter, aktualizacje przez kanał RSS.</description>
+</item>
+<item>
+  <g:id>AID-004</g:id>
+  <title>TamoSkan Pro · Wizualna Inspekcja Tam</title>
+  <link>https://bobry-shop.pl/product.html?id=AID-004</link>
+  <g:image_link>https://bobry-shop.pl/images/AID-004.png</g:image_link>
+  <g:price>149.00 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Cyfrowa Pracownia</g:product_type>
+  <description>Aplikacja mobilna i desktopowa do wizualnej inspekcji tam i żeremi. Wgrywasz 8–24 zdjęcia lub przelot drona 4K, Beaver 2.1 Pro Vision identyfikuje 14 klas defektów. Raport PDF z mapą napraw i rekomendacjami z naszego sklepu. iOS, Android, macOS, Linux. Subskrypcja miesięczna lub roczna.</description>
+</item>
+<item>
+  <g:id>SKL-001</g:id>
+  <title>tree-species-detector.skill</title>
+  <link>https://bobry-shop.pl/product.html?id=SKL-001</link>
+  <g:image_link>https://bobry-shop.pl/images/SKL-001.svg</g:image_link>
+  <g:price>49.00 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Cyfrowa Pracownia</g:product_type>
+  <description>Plik .skill zgodny ze specyfikacją Anthropic Skills. Uruchamiany gdy bóbr potrzebuje rozpoznać gatunek drzewa ze zdjęcia kory. Zwraca nazwę gatunku, klasę twardości (1-5) i rekomendowane zastosowanie. Testowany na Beaver 2.1 Pro Vision.</description>
+</item>
+<item>
+  <g:id>SKL-002</g:id>
+  <title>dam-engineer.skill</title>
+  <link>https://bobry-shop.pl/product.html?id=SKL-002</link>
+  <g:image_link>https://bobry-shop.pl/images/SKL-002.svg</g:image_link>
+  <g:price>149.00 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Cyfrowa Pracownia</g:product_type>
+  <description>Plik .skill uruchamiany przy projektowaniu tamy pod konkretne warunki hydrologiczne. Uwzględnia natężenie przepływu, spadek terenu, dostępne gatunki drewna i sezonowe wahania poziomu wody. Formuły walidowane przez 39 lat danych terenowych.</description>
+</item>
+<item>
+  <g:id>SKL-003</g:id>
+  <title>snack-critic.skill</title>
+  <link>https://bobry-shop.pl/product.html?id=SKL-003</link>
+  <g:image_link>https://bobry-shop.pl/images/SKL-003.svg</g:image_link>
+  <g:price>19.00 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Cyfrowa Pracownia</g:product_type>
+  <description>Plik .skill uruchamiany przy ocenie chrupkości kory, balansu marynaty pączków wierzbowych lub intensywności aromatu korzonków. Zwraca ocenę 0-100 i sugerowany pairing. Trenowany na 12 000 recenzji od Stowarzyszenia Krytyków Bobrowych.</description>
+</item>
+<item>
+  <g:id>SKL-004</g:id>
+  <title>flood-predictor.skill</title>
+  <link>https://bobry-shop.pl/product.html?id=SKL-004</link>
+  <g:image_link>https://bobry-shop.pl/images/SKL-004.svg</g:image_link>
+  <g:price>89.00 PLN</g:price>
+  <g:availability>in stock</g:availability>
+  <g:brand>Bobrownia</g:brand>
+  <g:product_type>Cyfrowa Pracownia</g:product_type>
+  <description>Plik .skill uruchamiany wiosną przy ocenie ryzyka roztopów. Łączy dane IMGW, modele hydrologiczne i 40 lat regionalnej historii powodzi. Głowica LSTM dospawana do bazowego Beaver 2.1 Pro.</description>
 </item>
 </channel>
 </rss>
