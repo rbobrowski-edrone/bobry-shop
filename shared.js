@@ -48,6 +48,7 @@ const products = [
 // CART (persisted in localStorage)
 // =============================================
 let cart = JSON.parse(localStorage.getItem('bobrownia_cart') || '[]');
+const CHECKOUT_CUSTOMER_KEY = 'bobrownia_checkout_customer';
 
 function saveCart() {
     localStorage.setItem('bobrownia_cart', JSON.stringify(cart));
@@ -104,8 +105,18 @@ function updateCartUI() {
 }
 
 function toggleCart() {
-    document.getElementById('cart-panel').classList.toggle('open');
-    document.getElementById('cart-overlay').classList.toggle('open');
+    var cartPanel = document.getElementById('cart-panel');
+    var cartOverlay = document.getElementById('cart-overlay');
+    if (!cartPanel || !cartOverlay) return;
+    cartPanel.classList.toggle('open');
+    cartOverlay.classList.toggle('open');
+}
+
+function closeCart() {
+    var cartPanel = document.getElementById('cart-panel');
+    var cartOverlay = document.getElementById('cart-overlay');
+    if (cartPanel) cartPanel.classList.remove('open');
+    if (cartOverlay) cartOverlay.classList.remove('open');
 }
 
 function checkout() {
@@ -113,12 +124,186 @@ function checkout() {
         showToast('Koszyk jest pusty!');
         return;
     }
+    openCheckoutForm();
+}
+
+function getStoredCheckoutCustomer() {
+    try {
+        return JSON.parse(localStorage.getItem(CHECKOUT_CUSTOMER_KEY) || '{}');
+    } catch (e) {
+        return {};
+    }
+}
+
+function saveCheckoutCustomer(customer) {
+    localStorage.setItem(CHECKOUT_CUSTOMER_KEY, JSON.stringify(customer));
+}
+
+function buildCheckoutUserId(email) {
+    return 'SHOP-' + String(email || '')
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '');
+}
+
+function ensureCheckoutForm() {
+    if (document.getElementById('checkout-modal')) return;
+
+    var modal = document.createElement('div');
+    modal.className = 'checkout-modal';
+    modal.id = 'checkout-modal';
+    modal.setAttribute('aria-hidden', 'true');
+    modal.innerHTML =
+        '<div class="checkout-dialog" role="dialog" aria-modal="true" aria-labelledby="checkout-title">' +
+            '<div class="checkout-header">' +
+                '<h2 id="checkout-title">Dane do zamówienia</h2>' +
+                '<button type="button" class="checkout-close" aria-label="Zamknij" onclick="closeCheckoutForm()">&times;</button>' +
+            '</div>' +
+            '<form class="checkout-form" id="checkout-form">' +
+                '<div class="checkout-grid">' +
+                    '<div class="form-group">' +
+                        '<label for="checkout-first-name">Imię</label>' +
+                        '<input id="checkout-first-name" name="first_name" type="text" autocomplete="given-name" required>' +
+                    '</div>' +
+                    '<div class="form-group">' +
+                        '<label for="checkout-last-name">Nazwisko</label>' +
+                        '<input id="checkout-last-name" name="last_name" type="text" autocomplete="family-name" required>' +
+                    '</div>' +
+                    '<div class="form-group">' +
+                        '<label for="checkout-email">Email</label>' +
+                        '<input id="checkout-email" name="email" type="email" autocomplete="email" required>' +
+                    '</div>' +
+                    '<div class="form-group">' +
+                        '<label for="checkout-phone">Telefon</label>' +
+                        '<input id="checkout-phone" name="phone" type="tel" autocomplete="tel">' +
+                    '</div>' +
+                    '<div class="form-group">' +
+                        '<label for="checkout-city">Miasto</label>' +
+                        '<input id="checkout-city" name="city" type="text" autocomplete="address-level2" required>' +
+                    '</div>' +
+                    '<div class="form-group">' +
+                        '<label for="checkout-country">Kraj</label>' +
+                        '<select id="checkout-country" name="country" autocomplete="country" required>' +
+                            '<option value="PL">Polska</option>' +
+                            '<option value="DE">Niemcy</option>' +
+                            '<option value="CZ">Czechy</option>' +
+                            '<option value="SK">Słowacja</option>' +
+                            '<option value="UA">Ukraina</option>' +
+                        '</select>' +
+                    '</div>' +
+                '</div>' +
+                '<label class="checkout-consent">' +
+                    '<input id="checkout-subscriber" name="subscriber_status" type="checkbox" value="1">' +
+                    '<span>Zapisz mnie do newslettera</span>' +
+                '</label>' +
+                '<div class="checkout-summary">' +
+                    '<span><strong id="checkout-items-count">0</strong> szt.</span>' +
+                    '<span id="checkout-total-price">0,00 zl</span>' +
+                '</div>' +
+                '<div class="checkout-actions">' +
+                    '<button type="button" class="btn btn-primary" onclick="closeCheckoutForm()">Wróć</button>' +
+                    '<button type="submit" class="btn btn-accent">Złóż zamówienie</button>' +
+                '</div>' +
+            '</form>' +
+        '</div>';
+
+    document.body.appendChild(modal);
+    document.getElementById('checkout-form').addEventListener('submit', submitCheckoutForm);
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) closeCheckoutForm();
+    });
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.classList.contains('open')) closeCheckoutForm();
+    });
+}
+
+function fillCheckoutForm() {
+    var form = document.getElementById('checkout-form');
+    if (!form) return;
+
+    var customer = getStoredCheckoutCustomer();
+    ['first_name', 'last_name', 'email', 'phone', 'city'].forEach(function(name) {
+        if (form.elements[name]) form.elements[name].value = customer[name] || '';
+    });
+    form.elements.country.value = customer.country || 'PL';
+    form.elements.subscriber_status.checked = customer.subscriber_status === '1';
+}
+
+function updateCheckoutSummary() {
+    var countEl = document.getElementById('checkout-items-count');
+    var totalEl = document.getElementById('checkout-total-price');
+    var count = cart.reduce(function(sum, item) { return sum + item.qty; }, 0);
+    var total = cart.reduce(function(sum, item) { return sum + item.price * item.qty; }, 0);
+    if (countEl) countEl.textContent = count;
+    if (totalEl) totalEl.textContent = total.toFixed(2) + ' zl';
+}
+
+function openCheckoutForm() {
+    ensureCheckoutForm();
+    fillCheckoutForm();
+    updateCheckoutSummary();
+
+    var modal = document.getElementById('checkout-modal');
+    var form = document.getElementById('checkout-form');
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('checkout-modal-open');
+
+    var firstEmptyField = Array.prototype.slice.call(form.querySelectorAll('input[required]')).find(function(input) {
+        return !input.value;
+    });
+    setTimeout(function() { (firstEmptyField || form.elements.email).focus(); }, 0);
+}
+
+function closeCheckoutForm() {
+    var modal = document.getElementById('checkout-modal');
+    if (!modal) return;
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('checkout-modal-open');
+}
+
+function getCheckoutCustomerFromForm(form) {
+    var formData = new FormData(form);
+    var email = String(formData.get('email') || '').trim();
+    var country = String(formData.get('country') || 'PL').trim().toUpperCase();
+
+    return {
+        email: email,
+        first_name: String(formData.get('first_name') || '').trim(),
+        last_name: String(formData.get('last_name') || '').trim(),
+        phone: String(formData.get('phone') || '').trim(),
+        city: String(formData.get('city') || '').trim(),
+        country: country || 'PL',
+        subscriber_status: form.elements.subscriber_status.checked ? '1' : '0',
+        user_id: buildCheckoutUserId(email)
+    };
+}
+
+function submitCheckoutForm(event) {
+    event.preventDefault();
+
+    if (cart.length === 0) {
+        closeCheckoutForm();
+        showToast('Koszyk jest pusty!');
+        return;
+    }
+
+    var form = event.currentTarget;
+    if (!form.reportValidity()) return;
+
+    var customer = getCheckoutCustomerFromForm(form);
+    saveCheckoutCustomer(customer);
+
     var orderId = 'ORD-' + Date.now();
-    edroneOrder(orderId, cart);
+    var orderItems = cart.map(function(item) { return Object.assign({}, item); });
+    edroneOrder(orderId, orderItems, customer);
     cart = [];
     saveCart();
     updateCartUI();
-    toggleCart();
+    closeCheckoutForm();
+    closeCart();
     window.location.href = 'thank-you.html?order=' + orderId;
 }
 
@@ -210,17 +395,19 @@ function edroneAddToCart(product, qty) {
     if (typeof _edrone.init === 'function') _edrone.init();
 }
 
-function edroneOrder(orderId, cartItems) {
+function edroneOrder(orderId, cartItems, customer) {
+    customer = customer || {};
     edroneReset();
     _edrone.action_type = 'order';
-    _edrone.email = 'sim-checkout-800@example.com';
-    _edrone.first_name = 'Marek';
-    _edrone.last_name = 'Borkowski';
-    _edrone.user_id = 'FAKE-800';
-    _edrone.subscriber_status = '1';
+    _edrone.email = customer.email;
+    _edrone.first_name = customer.first_name;
+    _edrone.last_name = customer.last_name;
+    _edrone.user_id = customer.user_id || buildCheckoutUserId(customer.email);
+    _edrone.subscriber_status = customer.subscriber_status || '0';
+    if (customer.phone) _edrone.phone = customer.phone;
     _edrone.order_id = orderId;
-    _edrone.country = 'PL';
-    _edrone.city = 'Krakow';
+    _edrone.country = customer.country || 'PL';
+    _edrone.city = customer.city;
     _edrone.base_currency = 'PLN';
     _edrone.order_currency = 'PLN';
     var total = cartItems.reduce(function(s, i) { return s + i.price * i.qty; }, 0);
