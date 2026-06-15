@@ -392,6 +392,7 @@ function edroneAddToCart(product, qty) {
     _edrone.product_counts = String(qty || 1);
     _edrone.product_category_ids = product.categoryId;
     _edrone.product_category_names = encodeURIComponent(product.categoryName);
+    _edrone.product_availability = '1';
     if (typeof _edrone.init === 'function') _edrone.init();
 }
 
@@ -421,6 +422,7 @@ function edroneOrder(orderId, cartItems, customer) {
     _edrone.product_counts = cartItems.map(function(i) { return i.qty; }).join('|');
     _edrone.product_category_ids = cartItems.map(function(i) { return i.categoryId; }).join('|');
     _edrone.product_category_names = cartItems.map(function(i) { return encodeURIComponent(i.categoryName); }).join('|');
+    _edrone.product_availability = cartItems.map(function() { return '1'; }).join('|');
     if (typeof _edrone.init === 'function') _edrone.init();
 }
 
@@ -529,6 +531,7 @@ function simulateEvent() {
             _edrone.product_skus = p2.sku;
             _edrone.product_category_ids = p2.categoryId;
             _edrone.product_category_names = encodeURIComponent(p2.categoryName);
+            _edrone.product_availability = '1';
             logDetail = p2.title;
             if (typeof _edrone.init === 'function') _edrone.init();
             break;
@@ -571,6 +574,7 @@ function simulateEvent() {
             _edrone.product_counts = orderProducts.map(function(p) { return p.qty; }).join('|');
             _edrone.product_category_ids = orderProducts.map(function(p) { return p.categoryId; }).join('|');
             _edrone.product_category_names = orderProducts.map(function(p) { return encodeURIComponent(p.categoryName); }).join('|');
+            _edrone.product_availability = orderProducts.map(function() { return '1'; }).join('|');
             logDetail = orderId + ' (' + total.toFixed(2) + ' PLN, ' + orderCustomer.email + ')';
             if (typeof _edrone.init === 'function') _edrone.init();
             break;
