@@ -458,6 +458,7 @@ var simulatedActions = [
 ];
 
 var simOrderCounter = 1000;
+var simulatedOrders = [];
 
 function pickWeightedAction() {
     var totalWeight = simulatedActions.reduce(function(s, a) { return s + a.weight; }, 0);
@@ -475,121 +476,105 @@ function pickRandomCustomerOrAnon() {
     if (Math.random() < 0.4) return null;
     return fakeCustomers[Math.floor(Math.random() * fakeCustomers.length)];
 }
+function buildSimOrderCustomer(customer) {
+    customer = customer || fakeCustomers[Math.floor(Math.random() * fakeCustomers.length)];
+    return Object.assign({}, customer, {
+        user_id: buildCheckoutUserId(customer.email),
+        subscriber_status: '1',
+        country: 'PL',
+        city: ['Krakow', 'Warszawa', 'Wroclaw', 'Gdansk', 'Poznan'][Math.floor(Math.random() * 5)]
+    });
+}
+function buildSimOrderProducts() {
+    var orderProducts = [];
+    var numProducts = Math.floor(Math.random() * 3) + 1;
+    for (var i = 0; i < numProducts; i++) {
+        orderProducts.push(Object.assign({}, pickRandomProduct(), { qty: Math.floor(Math.random() * 3) + 1 }));
+    }
+    return orderProducts;
+}
+function edroneOrderCancel(order) {
+    var data = new URLSearchParams({
+        app_id: _edrone.app_id,
+        sender_type: 'server',
+        action_type: 'order_cancel',
+        order_id: order.order_id,
+        email: order.customer.email
+    });
+    fetch('https://api.edrone.me/trace', { method: 'POST', body: data }).catch(function() {});
+}
 
 function simulateEvent() {
     var actionType = pickWeightedAction();
-    var customer = pickRandomCustomerOrAnon();
-    var isAnon = !customer;
-
-    edroneReset();
-    if (customer) {
-        _edrone.email = customer.email;
-        _edrone.first_name = customer.first_name;
-        _edrone.last_name = customer.last_name;
-        _edrone.user_id = customer.user_id;
-    }
+    var customer = null;
+    var isAnon = true;
 
     var logDetail = '';
 
     switch (actionType) {
         case 'homepage_view':
-            _edrone.action_type = 'homepage_view';
+            edroneHomepageView();
             logDetail = 'Strona główna';
-            if (typeof _edrone.init === 'function') _edrone.init();
             break;
         case 'product_view':
             var p = pickRandomProduct();
-            _edrone.action_type = 'product_view';
-            _edrone.product_ids = p.id;
-            _edrone.product_titles = encodeURIComponent(p.title);
-            _edrone.product_images = getFullImageUrl(p.image);
-            _edrone.product_urls = STORE_URL + 'product.html?id=' + p.id;
-            _edrone.product_skus = p.sku;
-            _edrone.product_category_ids = p.categoryId;
-            _edrone.product_category_names = encodeURIComponent(p.categoryName);
-            _edrone.product_availability = '1';
+            edroneProductView(p);
             logDetail = p.title;
-            if (typeof _edrone.init === 'function') _edrone.init();
             break;
         case 'category_view':
             var cat = pickRandomCategory();
-            _edrone.action_type = 'category_view';
-            _edrone.product_category_ids = cat.id;
-            _edrone.product_category_names = encodeURIComponent(cat.name);
+            edroneCategoryView(cat.id, cat.name);
             logDetail = cat.name;
-            if (typeof _edrone.init === 'function') _edrone.init();
             break;
         case 'add_to_cart':
             var p2 = pickRandomProduct();
-            _edrone.action_type = 'add_to_cart';
-            _edrone.product_ids = p2.id;
-            _edrone.product_titles = encodeURIComponent(p2.title);
-            _edrone.product_images = getFullImageUrl(p2.image);
-            _edrone.product_urls = STORE_URL + 'product.html?id=' + p2.id;
-            _edrone.product_skus = p2.sku;
-            _edrone.product_category_ids = p2.categoryId;
-            _edrone.product_category_names = encodeURIComponent(p2.categoryName);
-            logDetail = p2.title;
-            if (typeof _edrone.init === 'function') _edrone.init();
+            var qty = Math.floor(Math.random() * 3) + 1;
+            edroneAddToCart(p2, qty);
+            logDetail = p2.title + ' x' + qty;
             break;
         case 'subscribe':
-            var subCustomer = customer || fakeCustomers[Math.floor(Math.random() * fakeCustomers.length)];
-            _edrone.action_type = 'subscribe';
-            _edrone.email = subCustomer.email;
-            _edrone.first_name = subCustomer.first_name;
-            _edrone.subscriber_status = '1';
+            var subCustomer = fakeCustomers[Math.floor(Math.random() * fakeCustomers.length)];
             var tags = ['Newsletter Footer', 'Exit Popup', 'Sidebar Form', 'Checkout Subscribe'];
-            _edrone.customer_tags = tags[Math.floor(Math.random() * tags.length)];
-            logDetail = subCustomer.email + ' (' + _edrone.customer_tags + ')';
-            if (typeof _edrone.init === 'function') _edrone.init();
+            var tag = tags[Math.floor(Math.random() * tags.length)];
+            edroneSubscribe(subCustomer.email, subCustomer.first_name, tag);
+            customer = subCustomer;
+            isAnon = false;
+            logDetail = subCustomer.email + ' (' + tag + ')';
             break;
         case 'order':
-            var orderCustomer = customer || fakeCustomers[Math.floor(Math.random() * fakeCustomers.length)];
-            var orderProducts = [];
-            var numProducts = Math.floor(Math.random() * 3) + 1;
-            for (var i = 0; i < numProducts; i++) orderProducts.push(Object.assign({}, pickRandomProduct(), { qty: Math.floor(Math.random() * 3) + 1 }));
+            var orderCustomer = buildSimOrderCustomer(pickRandomCustomerOrAnon());
+            var orderProducts = buildSimOrderProducts();
             var orderId = 'SIM-ORD-' + (simOrderCounter++);
             var total = orderProducts.reduce(function(s, p) { return s + p.price * p.qty; }, 0);
-            _edrone.action_type = 'order';
-            _edrone.email = orderCustomer.email;
-            _edrone.first_name = orderCustomer.first_name;
-            _edrone.last_name = orderCustomer.last_name;
-            _edrone.user_id = orderCustomer.user_id;
-            _edrone.subscriber_status = '1';
-            _edrone.order_id = orderId;
-            _edrone.country = 'PL';
-            _edrone.city = ['Krakow', 'Warszawa', 'Wroclaw', 'Gdansk', 'Poznan'][Math.floor(Math.random() * 5)];
-            _edrone.base_currency = 'PLN';
-            _edrone.order_currency = 'PLN';
-            _edrone.base_payment_value = total.toFixed(2);
-            _edrone.order_payment_value = total.toFixed(2);
-            _edrone.product_ids = orderProducts.map(function(p) { return p.id; }).join('|');
-            _edrone.product_skus = orderProducts.map(function(p) { return p.sku; }).join('|');
-            _edrone.product_titles = orderProducts.map(function(p) { return encodeURIComponent(p.title); }).join('|');
-            _edrone.product_images = orderProducts.map(function(p) { return getFullImageUrl(p.image); }).join('|');
-            _edrone.product_urls = orderProducts.map(function(p) { return STORE_URL + 'product.html?id=' + p.id; }).join('|');
-            _edrone.product_counts = orderProducts.map(function(p) { return p.qty; }).join('|');
-            _edrone.product_category_ids = orderProducts.map(function(p) { return p.categoryId; }).join('|');
-            _edrone.product_category_names = orderProducts.map(function(p) { return encodeURIComponent(p.categoryName); }).join('|');
+            edroneOrder(orderId, orderProducts, orderCustomer);
+            simulatedOrders.push({ order_id: orderId, customer: orderCustomer });
+            customer = orderCustomer;
+            isAnon = false;
             logDetail = orderId + ' (' + total.toFixed(2) + ' PLN, ' + orderCustomer.email + ')';
-            if (typeof _edrone.init === 'function') _edrone.init();
             break;
         case 'order_cancel':
-            var cancelCustomer = customer || fakeCustomers[Math.floor(Math.random() * fakeCustomers.length)];
-            var cancelOrderId = 'SIM-ORD-' + Math.floor(Math.random() * simOrderCounter);
-            var data = new URLSearchParams({
-                app_id: _edrone.app_id,
-                sender_type: 'server',
-                action_type: 'order_cancel',
-                order_id: cancelOrderId,
-                email: cancelCustomer.email
-            });
-            fetch('https://api.edrone.me/trace', { method: 'POST', body: data }).catch(function() {});
-            logDetail = cancelOrderId + ' (' + cancelCustomer.email + ')';
+            if (simulatedOrders.length === 0) {
+                actionType = 'order';
+                var fallbackCustomer = buildSimOrderCustomer(pickRandomCustomerOrAnon());
+                var fallbackProducts = buildSimOrderProducts();
+                var fallbackOrderId = 'SIM-ORD-' + (simOrderCounter++);
+                var fallbackTotal = fallbackProducts.reduce(function(s, p) { return s + p.price * p.qty; }, 0);
+                edroneOrder(fallbackOrderId, fallbackProducts, fallbackCustomer);
+                simulatedOrders.push({ order_id: fallbackOrderId, customer: fallbackCustomer });
+                customer = fallbackCustomer;
+                isAnon = false;
+                logDetail = fallbackOrderId + ' (' + fallbackTotal.toFixed(2) + ' PLN, ' + fallbackCustomer.email + ')';
+                break;
+            }
+            var cancelledOrder = simulatedOrders.shift();
+            edroneOrderCancel(cancelledOrder);
+            customer = cancelledOrder.customer;
+            isAnon = false;
+            logDetail = cancelledOrder.order_id + ' (' + cancelledOrder.customer.email + ')';
             break;
     }
 
-    addLogEntry(actionType, customer, logDetail, isAnon && actionType !== 'subscribe' && actionType !== 'order');
+    addLogEntry(actionType, customer, logDetail, isAnon);
 }
 
 function addLogEntry(actionType, customer, detail, isAnon) {
