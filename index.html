@@ -210,29 +210,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 Wszystkie modele trenowane in-house na <strong>Beaver 2.1 Pro</strong> · 13B parametrów · context 128k · fine-tuning na 40 000 planów żeremi z lat 1923&ndash;2025.
             </p>
         </section>
-
-
-        <div class="newsletter">
-            <h2>Zapisz się do newslettera Bobrowni</h2>
-            <p>Bądź pierwszy w żeremiu — nowości produktowe, sezonowe oferty i porady architektoniczne raz w miesiącu.</p>
-            <div class="newsletter-form">
-                <input type="email" id="newsletter-email" placeholder="Twój adres email..." />
-                <button class="btn btn-accent" onclick="subscribeNL()">Zapisz się</button>
-            </div>
-        </div>
     `;
 
     edroneHomepageView();
 });
 
-function subscribeNL() {
-    var emailEl = document.getElementById('newsletter-email');
-    var email = emailEl.value.trim();
-    if (!email || email.indexOf('@') === -1) { showToast('Proszę podać poprawny email'); return; }
-    edroneSubscribe(email, '', 'Newsletter Footer');
-    emailEl.value = '';
-    showToast('Zapisano do newslettera!');
-}
 </script>
 </body>
 </html>
